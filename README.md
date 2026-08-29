@@ -1,6 +1,6 @@
 # Discord 角色身份组 Bot
 
-为 Discord 服务器提供角色颜色身份组菜单。目前包含《世界计划》六个组合与《魔法少女的魔女审判》的角色。
+为 Discord 服务器提供角色颜色身份组菜单。
 
 用户从下拉菜单选择角色后，会获得对应颜色的身份组；选择新角色会替换已有的角色身份组。Bot 启动后只处理菜单交互，不会自动创建频道、发送面板或修改身份组。
 
@@ -19,16 +19,16 @@ Bot 需要位于所有可分配角色之上，并拥有 **Manage Roles** 权限�
 
 ## Docker
 
-需要 Docker Desktop 正在运行。
+需要已安装并运行 Docker，且可以使用 Docker Compose。
 
-```powershell
+```sh
 docker compose up -d --build
 docker compose logs -f bot
 ```
 
 停止服务：
 
-```powershell
+```sh
 docker compose down
 ```
 
@@ -36,7 +36,7 @@ docker compose down
 
 以下命令需要手动执行，不会在容器启动时自动运行：
 
-```powershell
+```sh
 # 创建缺失身份组，并创建或更新角色选择面板。
 docker compose run --rm bot sh -c 'npm run deploy-role-panels -- "$GUILD_ID"'
 
@@ -46,6 +46,6 @@ docker compose run --rm bot sh -c 'npm run sync-role-colors -- "$GUILD_ID"'
 
 角色配置位于 `src/role-panels.js`。修改角色名称、颜色或菜单内容后，先执行对应管理命令；仅修改菜单选项行为时，再重启监听器：
 
-```powershell
+```sh
 docker compose restart bot
 ```
