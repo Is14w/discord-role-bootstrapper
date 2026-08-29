@@ -1,0 +1,20 @@
+{
+  "name": "discord-role-bootstrapper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Create configured Discord roles in one explicitly selected server.",
+  "main": "src/index.js",
+  "scripts": {
+    "create-roles": "node src/index.js",
+    "deploy-role-panels": "node src/deploy-role-panels.js",
+    "serve-role-panels": "node src/serve-role-panels.js",
+    "sync-role-colors": "node src/sync-role-colors.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.2.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
