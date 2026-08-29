@@ -1,0 +1,9 @@
+.env
+.git
+.gitignore
+.dockerignore
+node_modules
+npm-debug.log*
+role-panel.log
+role-panel.error.log
+README.md
